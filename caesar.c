@@ -31,8 +31,13 @@ int main(int argc, char *argv[]) {
 	// get key and convert to int
 	int key = atoi(argv[1]);
 
+	// open a file to store output
+	FILE *out;
+	out = fopen("caesar_out", "w");
 	// to encrypt, use a positive key, to decrypt, use a negative key
-	printf("%s\n", cipher(key, argv[2]));
+	// print result to output file
+	fprintf(out, "%s\n", cipher(key, argv[2]));
+	fclose(out);
 }
 
 char* cipher(int key, char text[]) {
