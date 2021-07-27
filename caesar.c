@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <stdlib.h>
 
 // input buffer length
 #define MAX 50
 
 char* cipher(int key, char text[]);
 
-int main() {
+int main(int argc, char *argv[]) {
+/*
 	// get text to be encrypted/decrypted
 	char buf[MAX];
 	printf("Enter text:  ");
@@ -17,9 +19,20 @@ int main() {
 	int key;
 	printf("Enter key:  ");
 	scanf("%d", &key);
+*/
+	// Expected args:
+	// [0] program call
+	// [1] key
+	// [2] text
+	if (argc != 3) {
+		printf("3 arguments required\n");
+		return 0;
+	}
+	// get key and convert to int
+	int key = atoi(argv[1]);
 
 	// to encrypt, use a positive key, to decrypt, use a negative key
-	printf("%s\n", cipher(key, buf));
+	printf("%s\n", cipher(key, argv[2]));
 }
 
 char* cipher(int key, char text[]) {
