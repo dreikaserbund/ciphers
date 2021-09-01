@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 
 	// create and open file for output
 	FILE *out;
-	out = fopen("frequency_out", "w");
+	out = fopen(".frequency_out", "w");
 	// print output to file
 	for (int i=0; i<26; i++) {
 		fprintf(out, "%d\n", abc[i]);

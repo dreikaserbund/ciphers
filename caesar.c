@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 
 	// open a file to store output
 	FILE *out;
-	out = fopen("caesar_out", "w");
+	out = fopen(".caesar_out", "w");
 	// to encrypt, use a positive key, to decrypt, use a negative key
 	// print result to output file
 	fprintf(out, "%s\n", cipher(key, argv[2]));
